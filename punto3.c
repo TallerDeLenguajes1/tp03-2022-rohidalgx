@@ -21,8 +21,8 @@ PRODUCTO *Productos //El tamaño de este arreglo depende de la variable
 
 
 int main(){
-    char *TiposProductos[]={“Galletas”,”Snack”,”Cigarrillos”,”Caramelos”,”Bebidas”};
-    
+    char *TiposProductos[]={“Galletas”,”Snack”,”Cigarrillos”,”Caramelos”,”Bebidas”};//
+
 
 
 
