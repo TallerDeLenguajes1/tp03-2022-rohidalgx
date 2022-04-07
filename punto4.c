@@ -1,35 +1,37 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 
-#define MAX 100
-
-int main(){
-    char aux[MAX];
-    int num;
-    printf("cuantos nombres desea ingresar?\n");
-    scanf("%d", &num);
+int main()
+{
+    int cant;
+    char *buff;
+    char **V;
+    printf("Ingrese la cantidad de nombres a ingresar:");
+    scanf("%i",&cant);
     getchar();
-    char *v[num];
+    V = (char**)malloc(sizeof(char *) * cant);
 
-    for (int i = 0; i < num; i++)
+    buff = (char *)malloc(100 * sizeof(char));
+    
+    for (int i=0; i<cant; i++)
     {
-        printf("Ingrese el nombre: \n");
-        gets(aux);
-        v[i]= (char *) malloc(strlen(aux)*sizeof(char));
-        strcpy(v[i], aux);
+        printf("Ingrese el %d) nombre: ",i+1);
+        gets(buff);
+        *(V+i)=(char *)malloc((strlen(buff) + 1) * sizeof(char));
+        strcpy(*(V+i),buff);
     }
-
-    for (int i = 0; i < num; i++)
+    
+    for (int j=0; j<cant; j++)
     {
-        printf("el nombre es: \n");
-        puts(v[i]);
+        printf("\n los nombres ingresados son: %s",*(V+j));
     }
-
-    for (int i = 0; i < num; i++)
+        
+    for (int i=0; i<cant; i++)
     {
-        free(v[i]);
+        free(V[i]);
     }
-
-    return (0);
+    
+    free(buff);
+    return 0;
 }

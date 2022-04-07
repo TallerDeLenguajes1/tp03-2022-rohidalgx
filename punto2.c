@@ -12,7 +12,7 @@ int main(){
     {
         printf("Ingrese el nombre: \n");
         gets(aux);
-        v[i]= (char *) malloc(strlen(aux)*sizeof(char));
+        v[i]= (char *) malloc(strlen((aux)+1)*sizeof(char));
         strcpy(v[i], aux);
     }
 
