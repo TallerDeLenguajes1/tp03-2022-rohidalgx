@@ -90,10 +90,10 @@ void mostrarProductos(PRODUCTO *Productos, int cant){
         printf("ID del producto: %d \n", Productos[i].ProductoID);
         printf("Cantidad: %d \n", Productos[i].Cantidad);
         printf("Tipo de producto: %s \n", Productos[i].TipoProducto);
-        printf("Precio unitario: %f \n", Productos[i].PrecioUnitario);
+        printf("Precio unitario: %.2f \n", Productos[i].PrecioUnitario);
         total+= totalProducto(Productos[i].Cantidad, Productos[i].PrecioUnitario);
      }
-     printf("Precio total: %f \n", total);
+     printf("Precio total: %.2f \n", total);
 }
 
 int totalProducto(int cantidad, float precio){
