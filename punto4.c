@@ -5,21 +5,22 @@
 int main()
 {
     int cant;
-    char *buff;
+    char *aux;
     char **V;
     printf("Ingrese la cantidad de nombres a ingresar:");
     scanf("%i",&cant);
     getchar();
+    
     V = (char**)malloc(sizeof(char *) * cant);
 
-    buff = (char *)malloc(100 * sizeof(char));
+    aux = (char *)malloc(100 * sizeof(char));
     
     for (int i=0; i<cant; i++)
     {
         printf("Ingrese el %d) nombre: ",i+1);
-        gets(buff);
-        *(V+i)=(char *)malloc((strlen(buff) + 1) * sizeof(char));
-        strcpy(*(V+i),buff);
+        gets(aux);
+        *(V+i)=(char *)malloc((strlen(aux) + 1) * sizeof(char));
+        strcpy(*(V+i),aux);
     }
     
     for (int j=0; j<cant; j++)
@@ -32,6 +33,6 @@ int main()
         free(V[i]);
     }
     
-    free(buff);
+    free(aux);
     return 0;
 }
