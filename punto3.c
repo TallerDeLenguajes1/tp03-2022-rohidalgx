@@ -21,9 +21,9 @@ typedef struct Cliente {
 
 void CargarCliente(CLIENTE *Clientes, int cantidad);
 void CargarProductos(PRODUCTO *producto, int cant);
-int totalProducto(int cantidad, float precio);
-void mostrarProductos(PRODUCTO *productos, int cant);
 void mostrarCliente(CLIENTE *Clientes, int cant);
+void mostrarProductos(PRODUCTO *productos, int cant);
+int totalProducto(int cantidad, float precio);
 
 int main(){
     srand(time(NULL));
@@ -59,7 +59,9 @@ void CargarCliente(CLIENTE *Clientes, int cantidad){
 }
 
 void CargarProductos(PRODUCTO *Productos, int cant){
+    
     char *TiposProductos[]={"Galletas","Snack","Cigarrillos","Caramelos","Bebidas"};
+
     for(int i=0; i < cant; i++){
         Productos[i].ProductoID = i + 1;
         Productos[i].Cantidad = rand() % 11 + 1 ; 
@@ -71,10 +73,11 @@ void CargarProductos(PRODUCTO *Productos, int cant){
 void mostrarCliente(CLIENTE *Clientes, int cant){
     char prod;
     for(int i=0; i < cant; i++){
+        printf("---------- \n");
         printf("ID del cliente: %d \n", Clientes[i].ClienteID);
         printf("Nombre del cliente: %s \n", Clientes[i].NombreCliente);
         printf("Cantidad de productos a pedir: %d \n", Clientes[i].CantidadProductosAPedir);
-        //printf("Productos pedidos: %s \n", Clientes[i].Productos);
+        printf("Productos pedidos: \n");
         mostrarProductos(Clientes[i].Productos, Clientes[i].CantidadProductosAPedir);
      }
 }
