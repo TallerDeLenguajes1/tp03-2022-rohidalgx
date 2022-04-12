@@ -40,6 +40,8 @@ int main(){
     mostrarCliente(pClientes, cantidadClientes);
     getchar();
     getchar();
+
+    free(pClientes);
     return 0;
 
 }
